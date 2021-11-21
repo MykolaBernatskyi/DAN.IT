@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Visit to Doctors</title>
+    <script src="js/script.js"></script>
+    <link rel="stylesheet" href="css/style.css">
+    <script src="js/dragForm.js"></script>
+    <script src="js/class.js"></script>
+</head>
+<body>
+<header>
+    <div class="header__logotype">
+        <a href="#"><img alt="#" src="img/med6.png" height="450" width="450"/><span>MedTree</span></a>
+    </div>
+    <button id="createVisitBtn" onclick="onFormOpen()">Створити запис</button>
+</header>
+<div class="visit-dashboard" id="visitDashboard">
+</div>
+
+<div id="modalWindow" class="modal-window">
+    <div>
+        <button class="close-btn" id="closeModalWindow" onclick="onFormClose()">x</button>
+    </div>
+    <label for="doctorSelection"></label>
+    <select id="doctorSelection" onchange="onSelectChange(event)">
+    </select>
+
+    <form class="container modal-window" id="subForm" onsubmit="onSubmitForm(event, this)">
+    </form>
+    <label>
+        <textarea name="additionComments" form="subForm" placeholder="Додаткові коментарі:" rows="10" cols="30"
+                  maxLength=400></textarea>
+    </label>
+    <button id="createBtn" type="submit" form="subForm" disabled="disabled">Створити</button>
+
+</div>
+
+</body>
+</html>
